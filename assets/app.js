@@ -1,10 +1,11 @@
+var link = "<a href='prayer-times.html'>Prayer times</a>";
 var aText = new Array(
     "hi, i'm ridho ayudha rachman",
     "a web developer",
     "based in indonesia",
     "i eat a lot of nasi padang",
     "and build beautiful websites",
-    ":)"
+    ":) " + link
     );
     var iSpeed = 150; 
     var iIndex = 0; 
