@@ -1,9 +1,40 @@
+function prayerTimes(latitude, longitude) {
+    fetch('http://api.aladhan.com/v1/calendar?latitude='+latitude+'&longitude='+longitude+'&method=4')
+    .then(response => response.json())
+    .then(function(response){
+        let tanggal         = new Date();
+        let sekarang        = tanggal.getDate() -1 ;
+        let data            = response.data[sekarang].timings;
+
+        let apps            = document.getElementById('typedtext');
+        let table           = document.createElement('table');
+        let tableBody       = document.createElement('tbody');
+
+        for (i in data) {
+            let row                             = tableBody.insertRow();
+            let name                            = row.insertCell(0);
+            let time                            = row.insertCell(1);
+                name.innerHTML                  = i;
+                time.innerHTML                  = data[i];
+                tableBody.appendChild(row);
+                
+        }
+
+        table.append(tableBody);
+        apps.appendChild(table); 
+        // console.log(data);
+        // console.log(sekarang);
+        // console.log(response.data[sekarang]);
+    });
+}
+
 function success(position) {
-    console.log(position);
+    prayerTimes(position.coords.latitude, position.coords.longitude);
 }
 
 function error() {
-    alert('Sorry');
+    // alert('Sorry');
+    prayerTimes('-6.200000', '106.816666');
 }
 
 function userLocation() {

@@ -3,7 +3,7 @@ var aText = new Array(
     "hi, i'm ridho ayudha rachman",
     "a web developer",
     "based in indonesia",
-    "i eat a lot of nasi padang",
+    "i eat a lot of ayam geprek",
     "and build beautiful websites",
     ":) " + link
     );
