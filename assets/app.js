@@ -1,4 +1,4 @@
-var link = "<a href='prayer-times.html' style='text-decoration:none;'>Prayer times</a>";
+var link = "<a href='prayer-times.html' style='text-decoration:none;color:yellow;'>Prayer times</a>";
 var aText = new Array(
     "hi, i'm ridho ayudha rachman",
     "a web developer",
