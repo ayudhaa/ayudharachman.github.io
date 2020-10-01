@@ -631,7 +631,7 @@ body {
 /* --------------------------------------------------------------------------- text infos data */
 /* --------------------------------------------------------------------------- speed */
 .set-speed dl.infos dd span:after {
-  content: 'Orbit Velocity'; }
+  content: 'Kecepatan Orbit'; }
 
 .set-speed #sun dl.infos dd:after {
   content: '0 km/h'; }
