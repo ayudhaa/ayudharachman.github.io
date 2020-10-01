@@ -1,40 +1,42 @@
-var link = "<a href='prayer-times.html' style='text-decoration:none;color:yellow;'>Prayer times</a>";
-var aText = new Array(
-    "hi, i'm ridho ayudha rachman",
-    "a web developer",
-    "based in indonesia",
-    "and build beautiful websites",
-    "...",
-    "ayoo shalat .. lihat jadwal nih ^_^ ",
-    link
-    );
-    var iSpeed = 60; 
-    var iIndex = 0; 
-    var iArrLength = aText[0].length; 
-    var iScrollAt = 20; 
-     
-    var iTextPos = 0; 
-    var sContents = ''; 
-    var iRow; 
-     
-    function typewriter()
-    {
-     sContents =  ' ';
-     iRow = Math.max(0, iIndex-iScrollAt);
-     var destination = document.getElementById("typedtext");
-     
-     while ( iRow < iIndex ) {
-      sContents += aText[iRow++] + '<br />';
-     }
-     destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "..";
-     if ( iTextPos++ == iArrLength ) {
-      iTextPos = 0;
-      iIndex++;
-      if ( iIndex != aText.length ) {
-       iArrLength = aText[iIndex].length;
-       setTimeout("typewriter()", 500);
-      }
-     } else {
-      setTimeout("typewriter()", iSpeed);
-     }
-    }
+$(window).load(function(){
+
+    var body = $("body"),
+        universe = $("#universe"),
+        solarsys = $("#solar-system");
+  
+    var init = function() {
+      body.removeClass('view-2D opening').addClass("view-3D").delay(2000).queue(function() {
+        $(this).removeClass('hide-UI').addClass("set-speed");
+        $(this).dequeue();
+      });
+    };
+  
+    var setView = function(view) { universe.removeClass().addClass(view); };
+  
+    $("#toggle-data").click(function(e) {
+      body.toggleClass("data-open data-close");
+      e.preventDefault();
+    });
+  
+    $("#toggle-controls").click(function(e) {
+      body.toggleClass("controls-open controls-close");
+      e.preventDefault();
+    });
+  
+    $("#data a").click(function(e) {
+      var ref = $(this).attr("class");
+      solarsys.removeClass().addClass(ref);
+      $(this).parent().find('a').removeClass('active');
+      $(this).addClass('active');
+      e.preventDefault();
+    });
+  
+    $(".set-view").click(function() { body.toggleClass("view-3D view-2D"); });
+    $(".set-zoom").click(function() { body.toggleClass("zoom-large zoom-close"); });
+    $(".set-speed").click(function() { setView("scale-stretched set-speed"); });
+    $(".set-size").click(function() { setView("scale-s set-size"); });
+    $(".set-distance").click(function() { setView("scale-d set-distance"); });
+  
+    init();
+  
+  });
