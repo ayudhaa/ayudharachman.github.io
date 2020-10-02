@@ -6,16 +6,53 @@
     <title>Hi !</title>
     <link rel="shortcut icon" type="image/png" href="assets/img/iconfinder_face_positive_smiley_smile_5241521.png"/>
     <link rel="stylesheet" href="assets/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/popup.css" type="text/css">
 </head>
 
 <body class="opening hide-UI view-2D zoom-large data-close controls-close">
     <div id="navbar">
-        <a id="toggle-data" href="#data"><i class="icon-data"></i>Data</a>
-        <h1>Mau lihat jadwal shalat ?<br>
-            <span>klik dong &nbsp; <a href="prayer-times.html" style="text-decoration:none;color:yellow">^_^</a>
+        <a id="toggle-data" href="#data"><i class="icon-data"></i>Info</a>
+        <h1>Mau lihat jadwal shalat ?
+                        
+            <span>
+                <p><label>klik dong &nbsp; <a href="prayer-times.html" style="text-decoration:none;color:yellowgreen">^_^</a></label></p>
+            </span>
+            <span>
+                <label class="btn" for="modal-1">Oh iya..ada pertanyaan ?</label>
+                <input class="modal-state" id="modal-1" type="checkbox" />
+                <div class="modal">
+                    <label class="modal__bg" for="modal-1"></label>
+                    <div class="modal__inner">
+                        <label class="modal__close" for="modal-1"></label>
+                        <form id="form">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="" style="color:black">Email</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="email" name="email" class="form-control" placeholder="Email kamu" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="" style="color:black">Isi hati</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <textarea name="isi" id="" class="form-control" placeholder="Isi hati kamu"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">&nbsp;</div>
+                                    <div class="col-75"><input type="submit" class="form-submit" value="Kirim"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </span>
         </h1>
-        <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controls</a>
+        <!-- <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controls</a> -->
     </div>
     <div id="data">
         <a class="sun" title="sun" href="#sunspeed">Matahari</a>
@@ -28,7 +65,7 @@
         <a class="uranus" title="uranus" href="#uranusspeed">Uranus</a>
         <a class="neptune" title="neptune" href="#neptunespeed">Neptunus</a>
     </div>
-    <div id="controls">
+    <!-- <div id="controls">
         <label class="set-view">
             <input type="checkbox">
         </label>
@@ -47,7 +84,7 @@
             <input type="radio" class="set-distance" name="scale">
             <span>Jarak</span>
         </label>
-    </div>
+    </div> -->
     <div id="universe" class="scale-stretched">
         <div id="galaxy">
             <div id="solar-system" class="earth">
@@ -147,6 +184,7 @@
         </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script type="text/javascript">
         if (typeof jQuery == 'undefined') {
             document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
