@@ -53,6 +53,19 @@ $(window).load(function () {
 
 });
 
+$('.form-control').on('keyup', function() {
+  let empty = false;
+
+  $('.form-control').each(function() {
+    empty = $(this).val().length == 0;
+  });
+
+  if (empty)
+    $('.form-submit').attr('disabled', 'disabled');
+  else
+    $('.form-submit').attr('disabled', false);
+});
+
 $("#form").submit(function(e) {
   e.preventDefault();
   $.ajax({
