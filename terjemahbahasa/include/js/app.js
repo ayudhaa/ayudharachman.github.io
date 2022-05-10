@@ -22,7 +22,7 @@ $("#form").on("submit", function(e){
     } else {
         Swal.fire({
             title: 'Hai,',
-            text: 'Tulis yang ingin di translate ya :)'
+            text: 'Ketik yang ingin ditranslate ya :)'
         });
     }
 });
