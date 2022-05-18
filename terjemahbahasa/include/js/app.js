@@ -15,7 +15,8 @@ $("#form").on("submit", function(e){
         })
         $.ajax(settings).done(function (response) {
             $("#result").html(response.data.result);
-            $("#form")[0].reset();
+            $('[name="enterteks"]').val('');
+            $('[name="tolang"]').val('');
             $("#submit").prop("disabled", false);
             $("#submit").attr("value", 'Terjemahin!');
         });
