@@ -5,7 +5,7 @@ $("#form").on("submit", function(e){
     if (teks.length > 0) {
         if (tolang == 1) {var convertto = 'id';} else {var convertto = 'en';}
         var settings = {
-            "url": 'https://amm-api-translate.herokuapp.com/translate?engine=google&text='+teks+'&to='+convertto+'',
+            "url": 'https://api-translate.azharimm.site/translate?engine=google&text='+teks+'&to='+convertto+'',
             "method": "GET",
             "timeout": 0,
         };
